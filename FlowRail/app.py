@@ -1,14 +1,22 @@
-# app.py
-from flask import Flask, render_template
-
-#Flask 객체 인스턴스 생성
+from flask import Flask,render_template, request
 app = Flask(__name__)
 
-@app.route('/') # 접속하는 url
-def index():
-  return render_template('search.html')
+@app.route('/')
+def hello_world():
+    return render_template('form.html')
 
-if __name__=="__main__":
-  app.run(debug=True)
-  # host 등을 직접 지정하고 싶다면
-  # app.run(host="127.0.0.1", port="5000", debug=True)
+@app.route('/getform',methods=['POST'])
+def getForm():
+    name = request.form['stationName']
+    #함수 호출 
+    a = "3분"
+    return render_template('form.html', time=a)
+
+@app.route('/test/<int:a>')
+def hello_world2(a):
+    print(a)
+    return render_template('search.html')
+
+
+if __name__ == '__main__':
+    app.run()
