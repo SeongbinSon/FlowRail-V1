@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Box to Terminal</title>
+</head>
+<body>
+
+<form action = "/getform" method="post">
+    <input type="text" id="searchInput" placeholder="2호선 역을 검색하세요..." name = "stationName">
+    <button type="submit">검색</button>
+</form>
+    <strong>{{time}}초 남음</strong>
+<script>
+   document.getElementById('searchForm')
+</script>
+</body>
+</html>
