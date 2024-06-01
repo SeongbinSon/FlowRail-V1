@@ -23,17 +23,17 @@ RTSA_get_info = RTSA_get_info.json()
 print("강남역")
 print("==========================================")
 print("열차번호")
-print(RTSA_get_info['realtimeArrivalList'][1]['btrainNo'])
+print(RTSA_get_info['realtimeArrivalList'][0]['btrainNo'])
 print("열차정보 생성 시간")
-print(RTSA_get_info['realtimeArrivalList'][1]['recptnDt'])
+print(RTSA_get_info['realtimeArrivalList'][0]['recptnDt'])
 print("첫번째 도착메시지")
-print(RTSA_get_info['realtimeArrivalList'][1]['arvlMsg2']) # [RTSA] 첫번째 도착메시지
+print(RTSA_get_info['realtimeArrivalList'][0]['arvlMsg2']) # [RTSA] 첫번째 도착메시지
 print("두번째 도착메시지")
-print(RTSA_get_info['realtimeArrivalList'][1]['arvlMsg3']) # [RTSA] 두번째 도착메시지
+print(RTSA_get_info['realtimeArrivalList'][0]['arvlMsg3']) # [RTSA] 두번째 도착메시지
 print("열차도착예정시간 (초)")
-print(RTSA_get_info['realtimeArrivalList'][1]['barvlDt']) # [RTSA] 열차도착예정시간
+print(RTSA_get_info['realtimeArrivalList'][0]['barvlDt']) # [RTSA] 열차도착예정시간
 print("==========================================")
 
 RTP_get_info = requests.get(RTP_url_line2)
 RTP_get_info = RTP_get_info.json()
-print(RTP_get_info['realtimePositionList'][1]['subwayId'])
+print(RTP_get_info['realtimePositionList'][0]['subwayId'])
