@@ -62,10 +62,11 @@ def getForm():
         RTSA_secondMsg = RTSA_get_info['realtimeArrivalList'][0]['arvlMsg3']
         info_list = [RTSA_get_info['realtimeArrivalList'][0]['btrainNo'], RTSA_get_info['realtimeArrivalList'][0]['recptnDt'], RTSA_get_info['realtimeArrivalList'][0]['arvlMsg2']]
         test_ord = RTSA_get_info['realtimeArrivalList'][0]['ordkey']
+        lineupdn = RTSA_get_info['realtimeArrivalList'][0]['updnLine']
 
 
 
-    return render_template('form.html', time=arrivaltime, firstMsg=RTSA_firstMsg, secondMsg=RTSA_secondMsg, SW_INFOLIST=info_list, testord = test_ord)
+    return render_template('form.html', time=arrivaltime, firstMsg=RTSA_firstMsg, secondMsg=RTSA_secondMsg, SW_INFOLIST=info_list, testord = test_ord , line_check_updn = lineupdn)
 
 # /* ------------------------------------------------------------------------------------------------ */
 
@@ -82,4 +83,3 @@ def index():
 
 if __name__ == '__main__':
     app.run()
-
