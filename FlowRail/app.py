@@ -57,6 +57,8 @@ def getForm():
         RTP_get_info = RTP_get_info.json()
 
         print(RTP_get_info['realtimePositionList'][0]['subwayId'])
+
+        # barvlDt / arvlMsg2 / arvlMsg3 / infolist / ordkey / updnLine 표시
         arrivaltime = RTSA_get_info['realtimeArrivalList'][0]['barvlDt']
         RTSA_firstMsg = RTSA_get_info['realtimeArrivalList'][0]['arvlMsg2']
         RTSA_secondMsg = RTSA_get_info['realtimeArrivalList'][0]['arvlMsg3']
@@ -70,6 +72,7 @@ def getForm():
 
 # /* ------------------------------------------------------------------------------------------------ */
 
+#subway 기능 구현 테스트배드
 @app.route('/subway')
 def index():
     name = request.form['stationName']
