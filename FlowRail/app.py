@@ -25,6 +25,9 @@ def getForm():
         # RTP API KEY = 795476586f6572723338674d467250
         RTP_URL = "http://swopenAPI.seoul.go.kr/api/subway/795476586f6572723338674d467250/json/realtimePosition/1(1 ~ )/40( ~ 40)/(호선이름)"
 
+        # [RTSA] 첫차 검색
+        RTSA_url_First_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/0/0/"+name
+
         # [RTSA] TEST #테스트 배드 사용안함
         RTSA_url_test = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/1/40/"+name
 
@@ -73,11 +76,11 @@ def getForm():
 # /* ------------------------------------------------------------------------------------------------ */
 
 #subway 기능 구현 테스트배드
-@app.route('/subway')
-def index():
+@app.route('/getsubway',methods=['POST', 'GET'])
+def getsubway():
     name = request.form['stationName']
-    RTSA_url_Gangnam = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/1/40/"+name
-    RTSA_get_info = requests.get(RTSA_url_Gangnam) # 실시간 역 도착정보 불러오기
+    RTSA_url_First_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/0/0/"+name
+    RTSA_get_info = requests.get(RTSA_url_First_search) # 실시간 역 도착정보 불러오기
     RTSA_get_info = RTSA_get_info.json()
     list = [RTSA_get_info['realtimeArrivalList'][1]['btrainNo'], RTSA_get_info['realtimeArrivalList'][1]['recptnDt'], RTSA_get_info['realtimeArrivalList'][1]['arvlMsg2']]
 

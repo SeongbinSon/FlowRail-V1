@@ -1,0 +1,54 @@
+.flow-time {
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.flow-time .div {
+    background-color: #171717;
+    width: 393px;
+    height: 852px;
+    position: relative;
+}
+
+.flow-time .seoul-line-1 {
+    position: absolute;
+    width: 109px;
+    height: 34px;
+    top: 306px;
+    left: 50px;
+}
+
+.flow-time .rectangle-line1 {
+    background-color: #1612cd;
+    position: absolute;
+    width: 109px;
+    height: 20px;
+    top: 7px;
+    left: 0px;
+    border-radius: 31px;
+}
+
+.flow-time .ellipse {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    top: 0px;
+    left: 37px;
+    background-color: #d9d9d9;
+    border-radius: 17px;
+}
+
+.flow-time .maintext-line1 {
+    width: 12px;
+    height: 100px;
+    color: #1612cd;
+    white-space: nowrap;
+    position: absolute;
+    top: 2px;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+}
