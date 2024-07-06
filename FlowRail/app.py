@@ -83,13 +83,13 @@ def getForm():
 @app.route('/getsubway',methods=['POST', 'GET'])
 def getsubway():
     name = request.form['stationName']
-    RTSA_url_First_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/0/0/"+name
+    RTSA_url_First_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/1/0/"+name
     RTSA_get_info = requests.get(RTSA_url_First_search) # 실시간 역 도착정보 불러오기
     RTSA_get_info = RTSA_get_info.json()
-    list = [RTSA_get_info['realtimeArrivalList'][1]['btrainNo'], RTSA_get_info['realtimeArrivalList'][1]['recptnDt'], RTSA_get_info['realtimeArrivalList'][1]['arvlMsg2']]
+    arrivaltime = RTSA_get_info['realtimeArrivalList'][0]['barvlDt']
 
-    RTSA_INFO_LIST = list
-    return render_template('search.html', info_list = RTSA_INFO_LIST)
+    
+    return render_template('search.html', time = arrivaltime)
 
 if __name__ == '__main__':
     app.run()
