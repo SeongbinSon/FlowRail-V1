@@ -8,6 +8,10 @@ app = Flask(__name__)
 def hello_world():
     return render_template('form.html', arrivaltime = None , RTSA_firstMsg = None , RTSA_secondMsg = None , SW_INFOLIST = None)
 
+@app.route('/subway')
+def test_subway():
+    return render_template('search.html')
+
 # /* ------------------------------------------------------------------------------------------------ */
 
 @app.route('/getform',methods=['POST', 'GET'])
