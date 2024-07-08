@@ -80,7 +80,7 @@ def getForm():
 # /* ------------------------------------------------------------------------------------------------ */
 
 #subway 기능 구현 테스트배드
-@app.route('/getsubway',methods=['POST', 'GET'])
+@app.route('/getsearch',methods=['POST', 'GET'])
 def getsubway():
     name = request.form['stationName']
     RTSA_url_First_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/1/0/"+name
