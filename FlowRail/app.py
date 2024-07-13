@@ -87,13 +87,16 @@ def getsubway():
     arrivaltime = 0
     infomation_test = 1
     arvlcode = "default"
+    updnline = "default"
 
     #이름 및 호선 지정
     name = request.form['stationName']
     line = request.form['line']
+    updnline = request.form['updnline']
 
     #터미널 확인 위한 출력문
     print(line)
+    print(updnline)
    
    #열차 검색을 위한 RTSA_url_First_search
     RTSA_url_First_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/0/40/"+name
@@ -107,8 +110,17 @@ def getsubway():
     # 2호선 근처 열차 검색 부분
     for i in range(len(RTSA_get_info['realtimeArrivalList'])):
         if RTSA_get_info['realtimeArrivalList'][i]['subwayId'] == "1002":
+
+            if RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == "0":
+                updnline = "상행/내선"
+            
+            
             arrivaltime = RTSA_get_info['realtimeArrivalList'][i]['barvlDt']
             infomation_test = RTSA_get_info['realtimeArrivalList'][i]['btrainNo']
+
+            if RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == "0":
+                updnline = "상행/내선"
+
 
             #arvlcode 한글변환 부분
             if RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "0":
