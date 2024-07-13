@@ -8,12 +8,19 @@
 <body>
 
     <form action = "/getsearch" method="post">
-    <input type="text" id="searchInput" placeholder="출발역을 입력하세요">
+    <input type="text" id="searchInput" name="stationName" placeholder="출발역을 입력하세요">
+    <p>2호선</p>
+    <input type="radio" name="line" id="line2" value="1002"/>
+    <p>신분당</p>
+    <input type="radio" name="line" id="lineRed" value="1077"/>
     <button type="submit">검색</button>
 </form>
-<strong>{{time}} 임.</strong>
+
 <script>
    document.getElementById('searchForm')
 </script>
+
+<strong>{{train_number}}열차 , {{time}}초 남음 , {{arrivalcode}}</strong>
+
 </body>
 </html>
