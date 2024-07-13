@@ -1,4 +1,4 @@
-from flask import Flask,render_template, request
+from flask import Flask, render_template, request
 import requests
 app = Flask(__name__)
 
@@ -132,14 +132,14 @@ def getsubway():
 
     
     if updnline == '내선':
-        updnline2 = '상행'
+        inner_circle_line_to_up_line = '상행'
 
     
     elif updnline == '외선':
-        updnline3 = '하행'
+        outer_circle_line_to_dn_line = '하행'
     # 2호선 내선순환 조회
     for i in range(len(RTSA_get_info['realtimeArrivalList'])):
-        if RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == updnline or  RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == updnline2 or RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == updnline3:
+        if RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == updnline or  RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == inner_circle_line_to_up_line or RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == outer_circle_line_to_dn_line:
 
             if RTSA_get_info['realtimeArrivalList'][i]['subwayId'] == line:
                     
