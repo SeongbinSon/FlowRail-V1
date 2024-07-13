@@ -42,6 +42,10 @@ def getForm():
         RTP_url_line2 = "http://swopenAPI.seoul.go.kr/api/subway/795476586f6572723338674d467250/json/realtimePosition/1/40/2호선"
         RTSA_get_info = requests.get(RTSA_url_test) # 실시간 역 도착정보 불러오기
         RTSA_get_info = RTSA_get_info.json()
+
+# /* ------------------------------------------------------------------------------------------------ */
+        
+        # RTSA Index Terminal
         print("==========================================")
         print(name)
         print("==========================================")
@@ -58,6 +62,8 @@ def getForm():
         print("* RTSA_INFOLIST *")
         print([RTSA_get_info['realtimeArrivalList'][0]['btrainNo'], RTSA_get_info['realtimeArrivalList'][0]['recptnDt'], RTSA_get_info['realtimeArrivalList'][0]['arvlMsg2']])
         print("==========================================")
+
+# /* ------------------------------------------------------------------------------------------------ */
 
         RTP_get_info = requests.get(RTP_url_line2)
         print(RTSA_get_info)
@@ -83,21 +89,38 @@ def getForm():
 @app.route('/getsearch',methods=['POST', 'GET'])
 def getsubway():
 
-    #arrivaltime , infomation_test , arvlcode 지정
+    #값 초기화
     arrivaltime = 0
     infomation_test = 1
     arvlcode = "default"
-    updnline = "default"
+    updnline_checker = "default"
+    first_info = "default"
+    second_info = "default"
+    updnline2 = 'def'
+    updnline3 = 'def'
 
     #이름 및 호선 지정
     name = request.form['stationName']
     line = request.form['line']
     updnline = request.form['updnline']
 
-    #터미널 확인 위한 출력문
+# /* ------------------------------------------------------------------------------------------------ */
+
+    # [/subway] RTSA Line & UpdnLine Terminal
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print(" ")
+    print("호선")
     print(line)
+    print(" ")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print(" ")
+    print("상하행")
     print(updnline)
-   
+    print(" ")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+
+# /* ------------------------------------------------------------------------------------------------ */
+
    #열차 검색을 위한 RTSA_url_First_search
     RTSA_url_First_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/0/40/"+name
     
@@ -107,52 +130,92 @@ def getsubway():
     # 정보 json 변환
     RTSA_get_info = RTSA_get_info.json()
 
-    # 2호선 근처 열차 검색 부분
+    
+    if updnline == '내선':
+        updnline2 = '상행'
+
+    
+    elif updnline == '외선':
+        updnline3 = '하행'
+    # 2호선 내선순환 조회
     for i in range(len(RTSA_get_info['realtimeArrivalList'])):
-        if RTSA_get_info['realtimeArrivalList'][i]['subwayId'] == "1002":
+        if RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == updnline or  RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == updnline2 or RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == updnline3:
 
-            if RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == "0":
-                updnline = "상행/내선"
-            
-            
-            arrivaltime = RTSA_get_info['realtimeArrivalList'][i]['barvlDt']
-            infomation_test = RTSA_get_info['realtimeArrivalList'][i]['btrainNo']
-
-            if RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == "0":
-                updnline = "상행/내선"
+            if RTSA_get_info['realtimeArrivalList'][i]['subwayId'] == line:
+                    
+                    arrivaltime = RTSA_get_info['realtimeArrivalList'][i]['barvlDt']
+                    infomation_test = RTSA_get_info['realtimeArrivalList'][i]['btrainNo']
+                    updnline_checker = RTSA_get_info['realtimeArrivalList'][i]['updnLine']
+                    first_info = RTSA_get_info['realtimeArrivalList'][i]['arvlMsg2']
+                    second_info = RTSA_get_info['realtimeArrivalList'][i]['arvlMsg3']
 
 
             #arvlcode 한글변환 부분
-            if RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "0":
-                arvlcode = "진입"
+                    if RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "0":
+                        arvlcode = "진입"
 
-            elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "1":
-                arvlcode = "도착"
-            
-            elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "2":
-                arvlcode = "출발"
+                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "1":
+                        arvlcode = "도착"
+                    
+                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "2":
+                        arvlcode = "출발"
 
-            elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "3":
-                arvlcode = "전역츨발"
+                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "3":
+                        arvlcode = "전역출발"
 
-            elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "4":
-                arvlcode = "전역진입"
-            
-            elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "5":
-                arvlcode = "전역도착"
+                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "4":
+                        arvlcode = "전역진입"
+                    
+                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "5":
+                        arvlcode = "전역도착"
 
-            elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "6":
-                arvlcode = "이거뭐야"
+                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "6":
+                        arvlcode = "이거뭐야"
 
-            elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "99":
-                arvlcode = "운행중"
-            break
+                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "99":
+                        arvlcode = "운행중"
+                    break
 
-    #터미널 확인 위한 출력물    
+# /* ------------------------------------------------------------------------------------------------ */
+
+    # [/subway] RTSA Command Terminal
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print("/*                                     RTSA Command Terminal                                        */")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print(" ")
+    print("열차도착예정시간(arrivaltime)")
     print(arrivaltime)
+    print(" ")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print(" ")
+    print("도착코드 (arvlCd)")
     print(arvlcode)
+    print(" ")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print(" ")
+    print("열차번호 (btrainNm)")
     print(infomation_test)
-    return render_template('search.html', time = arrivaltime , arrivalcode = arvlcode , train_number = infomation_test)
+    print(" ")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print(" ")
+    print("상하행선 구분 (updnLine)")
+    print(updnline_checker)
+    print(" ")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print(" ")
+    print("첫번째 도착 메시지 (arvlMsg2)")
+    print(first_info)
+    print(" ")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print(" ")
+    print("두번째 도착 메시지 (arvlMsg3)")
+    print(second_info)
+    print(" ")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    print("/*                                                                                                  */")
+    print("/* ------------------------------------------------------------------------------------------------ */")
+    return render_template('search.html', time = arrivaltime , arrivalcode = arvlcode , train_number = infomation_test , updn_check = updnline_checker , first_info = first_info , second_info = second_info)
 
 # /* ------------------------------------------------------------------------------------------------ */
 
