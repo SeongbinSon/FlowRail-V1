@@ -96,8 +96,8 @@ def getsubway():
     updnline_checker = "default"
     first_info = "default"
     second_info = "default"
-    updnline2 = 'def'
-    updnline3 = 'def'
+    inner_circle_line_to_up_line = 'def'
+    outer_circle_line_to_dn_line = 'def'
 
     #이름 및 호선 지정
     name = request.form['stationName']
