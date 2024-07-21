@@ -81,7 +81,7 @@ def getForm():
 
 
 
-    return render_template('form.html', time=arrivaltime, firstMsg=RTSA_firstMsg, secondMsg=RTSA_secondMsg, SW_INFOLIST=info_list, testord = test_ord , line_check_updn = lineupdn)
+    return render_template('form.html', time=arrivaltime, firstMsg=RTSA_firstMsg, secondMsg=RTSA_secondMsg, SW_INFOLIST = info_list, testord = test_ord , line_check_updn = lineupdn)
 
 # /* ------------------------------------------------------------------------------------------------ */
 
@@ -96,8 +96,8 @@ def getsubway():
     updnline_checker = "default"
     first_info = "default"
     second_info = "default"
-    inner_circle_line_to_up_line = 'def'
-    outer_circle_line_to_dn_line = 'def'
+    inner_circle_line_to_up_line = 'default'
+    outer_circle_line_to_dn_line = 'default'
 
     #이름 및 호선 지정
     name = request.form['stationName']
@@ -169,8 +169,6 @@ def getsubway():
                     elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "5":
                         arvlcode = "전역도착"
 
-                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "6":
-                        arvlcode = "이거뭐야"
 
                     elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "99":
                         arvlcode = "운행중"
