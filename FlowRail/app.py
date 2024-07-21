@@ -138,39 +138,39 @@ def getsubway():
     elif updnline == '외선':
         outer_circle_line_to_dn_line = '하행'
     # 2호선 내선순환 조회
-    for i in range(len(RTSA_get_info['realtimeArrivalList'])):
-        if RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == updnline or  RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == inner_circle_line_to_up_line or RTSA_get_info['realtimeArrivalList'][i]['updnLine'] == outer_circle_line_to_dn_line:
+    for Timelist in range(len(RTSA_get_info['realtimeArrivalList'])):
+        if RTSA_get_info['realtimeArrivalList'][Timelist]['updnLine'] == updnline or  RTSA_get_info['realtimeArrivalList'][Timelist]['updnLine'] == inner_circle_line_to_up_line or RTSA_get_info['realtimeArrivalList'][Timelist]['updnLine'] == outer_circle_line_to_dn_line:
 
-            if RTSA_get_info['realtimeArrivalList'][i]['subwayId'] == line:
+            if RTSA_get_info['realtimeArrivalList'][Timelist]['subwayId'] == line:
                     
-                    arrivaltime = RTSA_get_info['realtimeArrivalList'][i]['barvlDt']
-                    infomation_test = RTSA_get_info['realtimeArrivalList'][i]['btrainNo']
-                    updnline_checker = RTSA_get_info['realtimeArrivalList'][i]['updnLine']
-                    first_info = RTSA_get_info['realtimeArrivalList'][i]['arvlMsg2']
-                    second_info = RTSA_get_info['realtimeArrivalList'][i]['arvlMsg3']
+                    arrivaltime = RTSA_get_info['realtimeArrivalList'][Timelist]['barvlDt']
+                    infomation_test = RTSA_get_info['realtimeArrivalList'][Timelist]['btrainNo']
+                    updnline_checker = RTSA_get_info['realtimeArrivalList'][Timelist]['updnLine']
+                    first_info = RTSA_get_info['realtimeArrivalList'][Timelist]['arvlMsg2']
+                    second_info = RTSA_get_info['realtimeArrivalList'][Timelist]['arvlMsg3']
 
 
             #arvlcode 한글변환 부분
-                    if RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "0":
+                    if RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "0":
                         arvlcode = "진입"
 
-                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "1":
+                    elif RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "1":
                         arvlcode = "도착"
                     
-                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "2":
+                    elif RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "2":
                         arvlcode = "출발"
 
-                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "3":
+                    elif RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "3":
                         arvlcode = "전역출발"
 
-                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "4":
+                    elif RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "4":
                         arvlcode = "전역진입"
                     
-                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "5":
+                    elif RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "5":
                         arvlcode = "전역도착"
 
 
-                    elif RTSA_get_info['realtimeArrivalList'][i]['arvlCd'] == "99":
+                    elif RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "99":
                         arvlcode = "운행중"
                     break
 
