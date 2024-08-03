@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FlowRail Search Page</title>
+<html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}" />
     </head>
     <body>
         <div class="FlowRail-First">
@@ -21,7 +16,7 @@
                     당신이 원했던 철도
                 </span>
             </div>
-            <img src="/FlowRail/service_templates/images/firstpage.png">
+            <img src="{{ url_for('static', filename='images/First.png') }}">
             <spawn class="startbtn">
                 시작하기
             </span>

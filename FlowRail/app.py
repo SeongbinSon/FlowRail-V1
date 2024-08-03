@@ -15,7 +15,11 @@ def test_subway():
 
 @app.route('/first')
 def test_first_page():
-    return render_template('index.html')
+    return render_template('./service_templates/index.html')
+
+@app.route('/station_search')
+def search_page():
+    return render_template('./service_templates/station_search.html')
 # /* ------------------------------------------------------------------------------------------------ */
 
 @app.route('/getform',methods=['POST', 'GET'])

@@ -1,4 +1,3 @@
-
 .FlowRail-First {
     display: flex;
     flex-direction: column;
@@ -79,5 +78,5 @@
 img{
     position: absolute;
     text-align: center;
-    top: 325;
+    top: 314;
 }
