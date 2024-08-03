@@ -12,6 +12,10 @@ def hello_world():
 def test_subway():
     return render_template('search.html')
 
+
+@app.route('/first')
+def test_first_page():
+    return render_template('index.html')
 # /* ------------------------------------------------------------------------------------------------ */
 
 @app.route('/getform',methods=['POST', 'GET'])
