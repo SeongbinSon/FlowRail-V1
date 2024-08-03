@@ -20,6 +20,7 @@ def test_first_page():
 @app.route('/station_search')
 def search_page():
     return render_template('./service_templates/station_search.html')
+
 # /* ------------------------------------------------------------------------------------------------ */
 
 @app.route('/getform',methods=['POST', 'GET'])
