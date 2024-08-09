@@ -1,0 +1,93 @@
+.FlowRail-First {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 393px;
+    height: 852px;
+    flex-grow: 0;
+    background-color: #171717;
+}
+
+.search_main{
+    position: absolute;
+    left: 74px;
+    top: 144px;
+    width: 62px;
+    height: 38px;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.search_bar{
+    position: absolute;
+    top: 193px;
+    left: 33px;
+    width: 341px;
+    height: 40px;
+    border-radius: 76px;
+    background-color: #797979;
+}
+
+.line_choose_background{
+    position: absolute;
+    top: 196px;
+    left: 36px;
+    width: 95px;
+    height: 34px;
+    border-radius: 76px;
+    box-shadow: inset 0 4px 4px 0
+        rgba(0, 0, 0, 0.25);
+    background-color: #2f2f2f;
+}
+
+.line_choose_2{
+    position: absolute;
+    top: 199.7px;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: solid 3.5px #19981e;
+    background-color: #d9d9d9;
+}
+
+.ex-line2{
+    position: absolute;
+    top: 203px;
+    left: 43px;
+    width: 20px;
+    height: 10px;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #19981e;
+}
+
+.ex-line2-text{
+    position: absolute;
+    top: 208px;
+    left: 72px;
+    width: 43px;
+    height: 8px;
+    font-family: Pretendard;
+    font-size: 8px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
