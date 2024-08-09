@@ -17,11 +17,11 @@ def test_first_page():
     return render_template('./service_templates/index.html')
 
 @app.route('/check-time')
-def search_page():
+def test_check_time_page():
     return render_template('./service_templates/check-time.html')
 
 @app.route('/station-search')
-def search_page():
+def test_station_search_page():
     return render_template('./service_templates/station-search.html')
 
 # /* ------------------------------------------------------------------------------------------------ */
