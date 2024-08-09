@@ -9,6 +9,8 @@
 }
 
 
+
+
 .real{
 position: absolute;
 left: 75px;
@@ -328,4 +330,220 @@ color: #fff;
     letter-spacing: normal;
     text-align: left;
     color: #000;
+}
+
+.seoul-line2{
+    position: absolute;
+    top: 284px;
+    left: 210px;
+    width: 95px;
+    height: 17px;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.line2-r{
+    position: absolute;
+    top: 313px;
+    left: 206px;
+    width: 109px;
+    height: 20px;
+    border-radius: 31px;
+    background-color: #19981e;
+}
+
+.line2-e{
+    position: absolute;
+    top: 306px;
+    left: 243px;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    background-color: #d9d9d9;
+}
+
+.line2-text {
+    position: absolute;
+    top: 309px;
+    left: 253px;
+    width: 12px;
+    height: 28px;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #19981e;
+}
+
+.seoul-line4{
+    position: absolute;
+    top: 373px;
+    left: 210px;
+    width: 95px;
+    height: 17px;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.line4-r{
+    position: absolute;
+    top: 398px;
+    left: 206px;
+    width: 109px;
+    height: 20px;
+    border-radius: 31px;
+    background-color: #0099a3;
+}
+
+.line4-e{
+    position: absolute;
+    top: 391px;
+    left: 243px;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    background-color: #d9d9d9;
+}
+
+.line4-text {
+    position: absolute;
+    top: 394px;
+    left: 252px;
+    width: 12px;
+    height: 28px;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #0099a3;
+}
+
+.seoul-line6{
+    position: absolute;
+    top: 459px;
+    left: 210px;
+    width: 95px;
+    height: 17px;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.line6-r{
+    position: absolute;
+    top: 483px;
+    left: 206px;
+    width: 109px;
+    height: 20px;
+    border-radius: 31px;
+    background-color: #a34e00;
+}
+
+.line6-e{
+    position: absolute;
+    top: 476px;
+    left: 243px;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    background-color: #d9d9d9;
+}
+
+.line6-text {
+    position: absolute;
+    top: 479px;
+    left: 252px;
+    width: 15px;
+    height: 28px;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #a34e00;
+}
+
+.seoul-line8{
+    position: absolute;
+    top: 543px;
+    left: 210px;
+    width: 95px;
+    height: 17px;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.line8-r{
+    position: absolute;
+    top: 567px;
+    left: 206px;
+    width: 109px;
+    height: 20px;
+    border-radius: 31px;
+    background-color: #ca037a;
+}
+
+.line8-e{
+    position: absolute;
+    top: 560px;
+    left: 243px;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    background-color: #d9d9d9;
+}
+
+.line8-text {
+    position: absolute;
+    top: 563px;
+    left: 252px;
+    width: 15px;
+    height: 28px;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ca037a;
 }
