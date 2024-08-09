@@ -12,14 +12,17 @@ def hello_world():
 def test_subway():
     return render_template('search.html')
 
-
 @app.route('/first')
 def test_first_page():
     return render_template('./service_templates/index.html')
 
-@app.route('/station_search')
+@app.route('/check-time')
 def search_page():
-    return render_template('./service_templates/station_search.html')
+    return render_template('./service_templates/check-time.html')
+
+@app.route('/station-search')
+def search_page():
+    return render_template('./service_templates/station-search.html')
 
 # /* ------------------------------------------------------------------------------------------------ */
 
