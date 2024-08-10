@@ -386,6 +386,17 @@ color: #fff;
     color: #19981e;
 }
 
+button.line2-btn{
+    position: absolute;
+    background-image: url(./Right.png);
+    background-color: none;
+    border: none;
+    top: 311px;
+    left: 310px;
+    height: 0px;
+    width: 0px;
+}
+
 .seoul-line4{
     position: absolute;
     top: 373px;

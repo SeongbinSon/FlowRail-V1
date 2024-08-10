@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="station-search.css" />
+    </head>
+    <body>
+        <div class="FlowRail-First">
+            <form action="/getsearch" method="post">
+                <span class="search_main">
+                    검색
+                </span>
+                <div class="search_bar"></div>
+                <div class="line_choose_background">
+                    <input type="text" name="stationName"/>
+                </div>
+                <div class="line_choose_2"></div>
+                <input type="text" name ="line" value="1002" class="ex-line2"/>
+                <span class="ex-line2-text">
+                    서울 2호선
+                </span>
+                <img class="search_img" src="./Search.png">
+                <img class="line-menu_img" src="./Menu.png">             
+                <input type="submit" class="search-bar_img">
+                <input type="radio" class="up-line" name="updnline" id ="up" value="내선"/>
+                <input type="radio" class="up-line" name="updnline" id ="dn" value="외선"/>
+                <span class="up-line-text">상행/내선</span>
+            </form>
+

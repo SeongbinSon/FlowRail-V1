@@ -115,7 +115,7 @@ def getsubway():
     name = request.form['stationName']
     line = request.form['line']
     updnline = request.form['updnline']
-
+    print(name, line, updnline)
 # /* ------------------------------------------------------------------------------------------------ */
 
     # [/subway] RTSA Line & UpdnLine Terminal
@@ -228,6 +228,8 @@ def getsubway():
     return render_template('search.html', time = arrivaltime , arrivalcode = arvlcode , train_number = infomation_test , updn_check = updnline_checker , first_info = first_info , second_info = second_info)
 
 # /* ------------------------------------------------------------------------------------------------ */
-
+@app.route("/test")
+def test():
+    return render_template("station_search_test.html")
 if __name__ == '__main__':
     app.run()

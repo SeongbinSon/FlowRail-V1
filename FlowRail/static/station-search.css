@@ -86,7 +86,7 @@
 
 .ex-line2-text{
     position: absolute;
-    top: 205px;
+    top: 206px;
     left: 70px;
     width: 100px;
     height: 8px;
@@ -124,4 +124,31 @@ img.line-menu_img{
     top: 206px;
     height: 15px;
     width: 15px;
+}
+
+input.up-line{
+    position: absolute;
+    top: 251px;
+    left: 129px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.up-line-text{
+    position: absolute;
+    left: 60px;
+    top: 250px;
+    height: 20px;
+    width: 70px;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
 }
