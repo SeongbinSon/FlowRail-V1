@@ -1,16 +1,18 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='station-search.css') }}" />
+        <link rel="stylesheet" href="station-search.css" />
     </head>
     <body>
         <div class="FlowRail-First">
-            <div>
+            <form action="" method="">
                 <span class="search_main">
                     검색
                 </span>
                 <div class="search_bar"></div>
-                <div class="line_choose_background"></div>
+                <div class="line_choose_background">
+                    <input type="text" name="station"/>
+                </div>
                 <div class="line_choose_2"></div>
                 <span class="ex-line2">
                     2
@@ -18,5 +20,7 @@
                 <span class="ex-line2-text">
                     서울 2호선
                 </span>
-                <div class="line_choose-t"></div>
-            </div>
+                <img class="search_img" src="./Search.png">
+                <img class="line-menu_img" src="./Menu.png">
+                <input type="submit" class="search-bar_img" value="">
+            </form>
