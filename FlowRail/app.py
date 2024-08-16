@@ -24,6 +24,10 @@ def test_check_time_page():
 def test_station_search_page():
     return render_template('./service_templates/station-search.html')
 
+@app.route('/DI')
+def test_subway_DI():
+    return render_template('./service_templates/subway-DI.html')
+
 # /* ------------------------------------------------------------------------------------------------ */
 
 @app.route('/getform',methods=['POST', 'GET'])

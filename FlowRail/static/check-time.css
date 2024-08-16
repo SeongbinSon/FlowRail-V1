@@ -1,7 +1,5 @@
 .FlowRail-First {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+ 
     width: 393px;
     height: 852px;
     flex-grow: 0;
@@ -16,7 +14,7 @@ position: absolute;
 left: 75px;
 top: 140px;
 width: 140px;
-height: 76;
+height: 76; 
 font-family: Pretendard;
 font-size: 32px;
 font-weight: bold;

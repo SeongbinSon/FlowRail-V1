@@ -1,0 +1,315 @@
+.FlowRail-First {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 393px;
+    height: 852px;
+    flex-grow: 0;
+    background-color: #171717;
+}
+
+.station-background{
+    position: absolute;
+    top: 135px;
+    width: 180px;
+    height: 71px;
+    padding: 9px 56px 9px 63px;
+    border-radius: 48px;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #11ab21;
+}
+
+.line2-e-201{
+    position: absolute;
+    top: 140px;
+    left: 90px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: solid 10px #19981e;
+    background-color: #d9d9d9;
+}
+
+.line2-t-201{
+    position: absolute;
+    top: 166px;
+    left: 108px;
+    width: 35px;
+    height: 16px;
+    font-family: Pretendard;
+    font-size: 25px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #19981e;
+}
+
+.station-name{
+    position: absolute;
+    top: 145px;
+    left: 180px;
+    width: 62px;
+    height: 29px;
+    margin: 5px 0 0 10px;
+    font-family: Pretendard;
+    font-size: 35px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.station-t-line2{
+    position: absolute;
+    top: 192px;
+    left: 190px;
+    width: 80px;
+    height: 19px;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.in-out-line-background{
+    position: absolute;
+    top: 250px;
+    width: 103px;
+    height: 33px;
+    padding: 10px 23px 9px;
+    border-radius: 48px;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #11ab21;
+}
+
+.in-out-t{
+    position: absolute;
+    top: 267px;
+    left: 162px;
+    width: 100px;
+    height: 14px;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.infomation-t-1{
+    position: absolute;
+    top: 340px;
+    left: 90px;
+    width: 128px;
+    height: 30px;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #82d617;
+}
+
+.infomation-station-now{
+    position: absolute;
+    top: 370px;
+    left: 90px;
+    width: 128px;
+    height: 29px;
+    font-family: Pretendard;
+    font-size: 27px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.car-now-station{
+    position: absolute;
+    top: 372px;
+    left: 150px;
+    width: 70px;
+    height: 11px;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bcfe00;
+}
+
+.car-now-check{
+    position: absolute;
+    top: 390px;
+    left: 150px;
+    width: 70px;
+    height: 11px;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bcfe00;
+}
+
+.infomation-t-2{
+    position: absolute;
+    top: 460px;
+    left: 90px;
+    width: 128px;
+    height: 30px;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #82d617;
+}
+
+.infomation-station-now-2{
+    position: absolute;
+    top: 490px;
+    left: 90px;
+    width: 128px;
+    height: 29px;
+    font-family: Pretendard;
+    font-size: 27px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.car-now-station-2{
+    position: absolute;
+    top: 493px;
+    left: 170px;
+    width: 70px;
+    height: 11px;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bcfe00;
+}
+
+.car-now-check-2{
+    position: absolute;
+    top: 512px;
+    left: 170px;
+    width: 70px;
+    height: 11px;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bcfe00;
+}
+
+.infomation-t-3{
+    position: absolute;
+    top: 580px;
+    left: 90px;
+    width: 128px;
+    height: 30px;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #82d617;
+}
+
+.infomation-station-now-3{
+    position: absolute;
+    top: 610px;
+    left: 90px;
+    width: 128px;
+    height: 29px;
+    font-family: Pretendard;
+    font-size: 27px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+}
+
+.car-now-station-3{
+    position: absolute;
+    top: 612px;
+    left: 170px;
+    width: 70px;
+    height: 11px;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bcfe00;
+}
+
+.car-now-check-3{
+    position: absolute;
+    top: 632px;
+    left: 170px;
+    width: 70px;
+    height: 11px;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #bcfe00;
+}
