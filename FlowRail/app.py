@@ -2,6 +2,10 @@ from flask import Flask, render_template, request
 import requests
 app = Flask(__name__)
 
+line_number = {
+    "1077" : "신분당선",
+    "1002" : "2호선"
+}
 # /* ------------------------------------------------------------------------------------------------ */
 
 @app.route('/')
@@ -97,7 +101,7 @@ def getForm():
 
 
 
-    return render_template('form.html', time=arrivaltime, firstMsg=RTSA_firstMsg, secondMsg=RTSA_secondMsg, SW_INFOLIST = info_list, testord = test_ord , line_check_updn = lineupdn)
+    return render_template('subway-DI.html', time=arrivaltime, firstMsg=RTSA_firstMsg, secondMsg=RTSA_secondMsg, SW_INFOLIST = info_list, testord = test_ord , line_check_updn = lineupdn)
 
 # /* ------------------------------------------------------------------------------------------------ */
 
@@ -114,12 +118,13 @@ def getsubway():
     second_info = "default"
     inner_circle_line_to_up_line = 'default'
     outer_circle_line_to_dn_line = 'default'
+    trainlinenum = 'default'
 
     #이름 및 호선 지정
     name = request.form['stationName']
     line = request.form['line']
     updnline = request.form['updnline']
-    print(name, line, updnline)
+    print(name,  line, updnline)
 # /* ------------------------------------------------------------------------------------------------ */
 
     # [/subway] RTSA Line & UpdnLine Terminal
@@ -139,12 +144,15 @@ def getsubway():
 
    #열차 검색을 위한 RTSA_url_First_search
     RTSA_url_First_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/0/40/"+name
-    
+    RTSA_url_Second_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/0/40/"+name
+    RTSA_url_Third_search = "http://swopenAPI.seoul.go.kr/api/subway/476a4267646572723737724355686d/json/realtimeStationArrival/2/2/"+name
     # 실시간 역 도착정보 불러오기
     RTSA_get_info = requests.get(RTSA_url_First_search)
+    RTSA_Second_get_info = requests.get(RTSA_url_Second_search)
 
     # 정보 json 변환
     RTSA_get_info = RTSA_get_info.json()
+    RTSA_Second_get_info = RTSA_Second_get_info.json()
 
     
     if updnline == '내선':
@@ -165,8 +173,8 @@ def getsubway():
                     first_info = RTSA_get_info['realtimeArrivalList'][Timelist]['arvlMsg2']
                     second_info = RTSA_get_info['realtimeArrivalList'][Timelist]['arvlMsg3']
 
-
-            #arvlcode 한글변환 부분
+            
+                            #arvlcode 한글변환 부분
                     if RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "0":
                         arvlcode = "진입"
 
@@ -187,6 +195,44 @@ def getsubway():
 
 
                     elif RTSA_get_info['realtimeArrivalList'][Timelist]['arvlCd'] == "99":
+                        arvlcode = "운행중"
+                    break
+    
+
+
+
+    for S_Timelist in range(len(RTSA_Second_get_info['realtimeArrivalList'])):
+        if RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['updnLine'] == updnline or RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['updnLine'] == inner_circle_line_to_up_line or RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['updnLine'] == outer_circle_line_to_dn_line:
+            
+            if RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['subwayId'] == line:
+                    second_arrivaltime = RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['barvlDt']
+                    second_infomation_test = RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['btrainNo']
+                    second_updnline_checker = RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['updnLine']
+                    second_first_info = RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlMsg2']
+                    two_second_info = RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlMsg3']
+
+
+                    
+                    if RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlCd'] == "0":
+                        arvlcode = "진입"
+
+                    elif RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlCd'] == "1":
+                        arvlcode = "도착"
+                    
+                    elif RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlCd'] == "2":
+                        arvlcode = "출발"
+
+                    elif RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlCd'] == "3":
+                        arvlcode = "전역출발"
+
+                    elif RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlCd'] == "4":
+                        arvlcode = "전역진입"
+                    
+                    elif RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlCd'] == "5":
+                        arvlcode = "전역도착"
+
+
+                    elif RTSA_Second_get_info['realtimeArrivalList'][S_Timelist]['arvlCd'] == "99":
                         arvlcode = "운행중"
                     break
 
@@ -229,7 +275,12 @@ def getsubway():
     print("/* ------------------------------------------------------------------------------------------------ */")
     print("/*                                                                                                  */")
     print("/* ------------------------------------------------------------------------------------------------ */")
-    return render_template('search.html', time = arrivaltime , arrivalcode = arvlcode , train_number = infomation_test , updn_check = updnline_checker , first_info = first_info , second_info = second_info)
+    print(infomation_test) # 열차 번호
+    print(first_info)
+    print(second_info) # 현재 역
+    print(arvlcode) # 도착 코드
+
+    return render_template('./service_templates/subway-DI.html', name = name, line=line_number[line] ,time = arrivaltime , arrivalcode = arvlcode , train_number = infomation_test ,updn_check = updnline_checker , first_info = first_info , second_info = second_info,second_arrivaltime = second_arrivaltime, second_infomation_test = second_infomation_test,second_updnline_checker = second_updnline_checker, second_first_info = second_first_info, two_second_info = two_second_info)
 
 # /* ------------------------------------------------------------------------------------------------ */
 @app.route("/test")

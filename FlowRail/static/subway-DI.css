@@ -51,7 +51,7 @@
     position: absolute;
     top: 145px;
     left: 180px;
-    width: 62px;
+    width: 180px;
     height: 29px;
     margin: 5px 0 0 10px;
     font-family: Pretendard;
@@ -131,10 +131,10 @@
     position: absolute;
     top: 370px;
     left: 90px;
-    width: 128px;
+    width: 300px;
     height: 29px;
     font-family: Pretendard;
-    font-size: 27px;
+    font-size: 22px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -146,8 +146,8 @@
 
 .car-now-station{
     position: absolute;
-    top: 372px;
-    left: 150px;
+    top: 405px;
+    left: 90px;
     width: 70px;
     height: 11px;
     font-family: Pretendard;
@@ -163,8 +163,8 @@
 
 .car-now-check{
     position: absolute;
-    top: 390px;
-    left: 150px;
+    top: 425px;
+    left: 90px;
     width: 70px;
     height: 11px;
     font-family: Pretendard;
@@ -199,10 +199,10 @@
     position: absolute;
     top: 490px;
     left: 90px;
-    width: 128px;
+    width: 400px;
     height: 29px;
     font-family: Pretendard;
-    font-size: 27px;
+    font-size: 22px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -214,8 +214,8 @@
 
 .car-now-station-2{
     position: absolute;
-    top: 493px;
-    left: 170px;
+    top: 525px;
+    left: 90px;
     width: 70px;
     height: 11px;
     font-family: Pretendard;
@@ -231,8 +231,8 @@
 
 .car-now-check-2{
     position: absolute;
-    top: 512px;
-    left: 170px;
+    top: 545px;
+    left: 90px;
     width: 70px;
     height: 11px;
     font-family: Pretendard;

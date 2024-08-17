@@ -14,15 +14,16 @@
                     <input type="text" name="stationName"/>
                 </div>
                 <div class="line_choose_2"></div>
-                <input type="text" name ="line" value="1002" class="ex-line2"/>
-                <span class="ex-line2-text">
+                <span class="ex-line2">2</span>
+                <span class="ex-line2-text" name="line" value="1077">
                     서울 2호선
                 </span>
                 <img class="search_img" src="{{ url_for('static', filename='images/Search.png') }}">
                 <img class="line-menu_img" src="{{ url_for('static', filename='images/Menu.png') }}">             
-                <input type="submit" class="search-bar_img">
+                <input type="submit" class="search-bar_img" name="line" value="1077">검색</input>
                 <input type="radio" class="up-line" name="updnline" id ="up" value="내선"/>
-                <input type="radio" class="up-line" name="updnline" id ="dn" value="외선"/>
+                <input type="radio" class="dn-line" name="updnline" id ="dn" value="외선"/>
                 <span class="up-line-text">상행/내선</span>
+                <span class="dn-line-text">하행/외선</span>
             </form>
 
